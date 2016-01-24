@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> MeineWebseite</title>
+		
+	</head>
+
+	<body>
+	<div id="palyer" style="background-color: rgb(100,120,180); width: 10px;height:10px;position: relative; left: 100px; top 100px;"></div>
+
+	</body>
+	<script>
+	
+	var player = document.getElementById("palyer");
+	var x = 0;
+	var y = 10;
+	var dx = 2;
+	var dy = 3;
+	
+	function loop(){
+		palyer.style.left = x + "px";
+		palyer.style.top = y + "px";
+		gameloop();
+	}
+	function gameloop(){
+	dy = dy + 0.1;
+		x = x + dx;
+		y = y + dy;
+		if (x >= 400 || x < 0){
+		 dx = dx * -1;
+		}
+		
+		
+		if (y >= 200 || y < 0){
+		 dy = dy * -1;
+		}
+	}
+	setInterval(loop,7);
+	</script>
+</html>
