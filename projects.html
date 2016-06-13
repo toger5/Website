@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> MeineWebseite</title>
+
+	<meta charset="ISO-8859-1"/>
+	<meta name="description" content=""/>
+	<meta name="author" content =""/>
+	<meta name="keywords" content =""/>
+	<link href="stylesheet.css" type="text/css" rel="stylesheet"/>
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One&subset=latin,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+	<script src="jquery-1.11.3.js"></script>
+	<script src="jquery.easing.1.3.js" ></script>
+	<script src="jquery.transit.min.js" ></script>
+	<script language="javascript" type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+		<!-- Circle Menue -->
+		<div class="circleMenue" >
+			<img class="circleMenueButton" id="upButton" src="Images/upIcon.png" alt="U" height="70" width="70" onclick= "gototop();">
+			<img class="circleMenueButton" id="closeButton" src="Images/closeIcon.png" alt="C" height="70" width="70" onclick= "resetInspect(true);">
+		</div>
+		<!-- Kopfzeile -->
+
+		<div id="head_main_container">
+
+			<table id="MainMenueTable">
+				<tr>
+					<td><a href="index.html" style="display:block;">Home</a> </td>
+					<td><a href="projects.html" style="display:block;">Projects</a> </td>
+					<td><a href="AboutMe.html" style="display:block;">About Me</a> </td>
+
+				</tr>
+			</table>
+		</div>
+
+		<div id="hider"></div>
+
+		<!-- liste an inhalten -->
+		<div id="root_site">
+
+		<!-- board
+				<div id="board00" class="window" style="background: #a99989;"  onClick="scrollToItem('board00')">
+
+					<div class="prevImage" style="background: url(images/0650.png); background-size: 711px 400px; background-position: -100px 0px"></div>
+
+					<div class="headline">
+						Thema One
+					</div>
+
+				</div>
+		-->
+
+		<!-- headphones1
+				<div id="head00" class="window" style="background:#857361;" onClick="scrollToItem('head00')">
+
+					<div align="center" class="prevImage" style="background: url(images/kp.png); background-size: 711px 400px; background-position: -100px 0px"></div>
+					<div class="headline">
+						Thema Two
+					</div>
+
+				</div>
+
+				<div class="ArtikelText" id="head01"style="background-color: rgb(120,85,15);">
+					<img src="Images/f.JPG" alt="U" height="100%" width="50%" style="float:left;"></img>
+					<div style="height: 100%; width: 50%; float: right; background-color: #FFF; position:relative;">
+						<h1>Erstellen dieser Webseite</h1>
+						<p>Da ich auf dieser Websiete alle projecte die etwas mit technik ode rinformatikl zu tun haben sammeln möchte ist das erstellen
+						dieser webseite sebstverständlich auch ein teil somit gibt es auch einen Artikel darüber. Ich werde im allgemeinen auf die möglichkeiten zum erstellen einer Webseite eingehen
+						und auch erzählen wie diese webseite entstanden ist</p>
+						<p>bei dem erstellen</p>
+					</div>
+
+				</div>
+				<div class="ArtikelText" id="head02"style="background-color: rgb(100,80,80);">
+				<img src="Images/f.JPG" alt="U" height="100%" width="50%" style="float:left;"></img>
+					hallo ich bin die zw Seite
+
+				</div>
+				<div class="ArtikelText" id="head03"style="background-color: rgb(50,30,50);">
+					hallo ich bin die d Seite
+
+				</div>
+				<div class="ArtikelText" id="head04" style="background-color: rgb(100,52,82);">
+					hallo ich bin die 4 Seite
+
+				</div>
+		-->
+
+		<!-- headphones2
+				<div id="hillClimb00" class="window" style="background: #ada385;" onClick="scrollToItem('hillClimb00')">
+					<div align="center" class="prevImage" style="background: url(Inhalte/BlenderHillClimbRacing/titelBild.png); background-size: 476px 400px; background-position: -30px 0px"></div>
+					<div class="headline">
+						Programming an 2D car Game in the BlenderGameEngine
+					</div>
+
+				</div>
+				<div class="ArtikelText" id="hillClimb01" style="background-color: rgb(120,85,15);">
+					<img src="Inhalte/BlenderHillClimbRacing/seite1bild1.png" alt="U" height="33%" width="40%" style="float:left;"></img>
+					<div class ="ArtikelInhaltTeil" style="float:left; height: 33%;">
+						<h2>Erste Idee</h2>
+						<p>Ich denke jeder kennt das spiel Hill climb racing (android game).</p>
+						<p>für die die es nicht kennen: man fähr in einer 2d welt mit verschiedenen Autos berge Hoch (kurz gefasst).</p>
+						<p>deise war jedenfalls eines der Hauptmotivationen und ich wollte etwas in dieser richtung machen. </p>
+						<p>zudem habe ich zu diesem Zeitpunkt die constraints der blender game engine entdeckt.</p>
+						<p>besonders der VehicleConstraint hatte mich interessiert. Nachdem ich damit etwas herumgespielt habe und ein zwei autos eine 3D car physik configuriert habe.</p>
+						<p>wollte ich damit ein spielbares Spiel erstellen. Und da ich wie anfangs erwähnt auch begeistert vonn hill climb racing war wurde es ein Hill climb racing game.</p>
+					</div>
+
+					<div style="background: url(Inhalte/BlenderHillClimbRacing/seite1bild2.png); height:34%; width:100%; float:left; background-size: 100% 100%; background-color:#FFF">
+						<div class ="ArtikelInhaltTeil" style="float:right; background-color:rgb(0,0,0,0); height: 100%;">
+
+							<h2>Erste Idee</h2>
+							<p>Ich denke jeder kennt das spiel Hill climb racing (android game).</p>
+							<p>für die die es nicht kennen: man fähr in einer 2d welt mit verschiedenen Autos berge Hoch (kurz gefasst).</p>
+							<p>deise war jedenfalls eines der Hauptmotivationen und ich wollte etwas in dieser richtung machen. </p>
+							<p>zudem habe ich zu diesem Zeitpunkt die constraints der blender game engine entdeckt.</p>
+							<p>besonders der VehicleConstraint hatte mich interessiert. Nachdem ich damit etwas herumgespielt habe und ein zwei autos eine 3D car physik configuriert habe.</p>
+							<p>wollte ich damit ein spielbares Spiel erstellen. Und da ich wie anfangs erwähnt auch begeistert vonn hill climb racing war wurde es ein Hill climb racing game.</p>
+						</div>
+					</div>
+
+
+					<img src="Images/f.JPG" alt="U" height="33%" width="40%" style="float:left;"></img>
+					<div class ="ArtikelInhaltTeil" style="float:left; height: 33%;">	Hallo	</div>
+
+				</div>
+				 -->
+		</div>
+	</body>
+</html>

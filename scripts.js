@@ -9,15 +9,70 @@ das hat den vorteil dass ich jedes div dann immmer nur einmal drehen kann und da
 dann muss nich eine Funktin gschrieben werden die es ermöglicht dass alle elemente mit dem sleben namen (die zu einem gemiensamen artikel gehören)
 gefunden werde und an die selbe stele bewegt werden.
 */
+
+
+
+//Liste Fuer alle artil und ihre anordnung:
+
+var articleList = ["long_board.html","headphones1.html","HillClimbRacing.html","footer.html"]
+
+//-----------------
+
+
+
+
 var inspectmode = false;
 var inspectID = [];
 
-page = 0;
+var page = 0;
 
-window.onscroll = testScroll
+/*setup von der seite (laden aller elemente)*/
+
+var articleNumberCoutner = 0;
+var innerHTMLtext = "";
+
+function load_articles(number) {
+  console.log(number);
+  var name = articleList[number];
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      //document.getElementById("demo").innerHTML = xhttp.responseText;
+
+
+      if (articleList.length > number){
+        console.log(xhttp.responseText);
+        innerHTMLtext += xhttp.responseText;
+      }
+      if (articleList.length > number + 1){
+        articleNumberCoutner += 1;
+        console.log("adsgsag");
+        load_articles(articleNumberCoutner);
+
+      }
+      else{
+        textInsideReady();
+      }
+      //document.getElementById("root_site").innerHTML = xhttp.responseText;//"Paragraph changed!";
+    }
+  };
+  xhttp.open("GET", "articles/" + name, true);
+  xhttp.send();
+}
+
+load_articles(articleNumberCoutner);
+
+window.onscroll = testScroll;
 //window.onclick = click
+function textInsideReady(){
+  console.log("done");
+  console.log(innerHTMLtext);
+  document.getElementById("root_site").innerHTML = innerHTMLtext;
+  document.getElementById("hider").remove()
+}
 
 $(document).ready(function(){
+
 	$( "body" ).click(function( event ) {
 		var tar = $(event.target)
 		page_click(tar);
@@ -111,8 +166,8 @@ function gotoPage(numberToGo){
 		}
 	}
 }
-function testScroll(ev){
 
+function testScroll(ev){
 	if (inspect()){
 		resetInspect(false);
 	}
@@ -125,23 +180,24 @@ function resetInspect(scroll){
 			/*d = (inspectID.length - index - 1) * 150*/
 			//document.getElementById(inspectID[index]).style.zIndex -= 100;
 			if(index == 0){
-
-				$("#"+inspectID[index]).css({ transformOrigin: '0px 0px' }).transition({
+        $("#"+inspectID[index]).css({ transformOrigin: '0px 0px' }).transition({
+          height : "600px",/*, delay: d*/
+          rotate : "0deg",/*, delay: d*/
+        }, 800, "easeOutExpo");
+				/*$("#"+inspectID[index]).css({ transformOrigin: '0px 0px' }).transition({
 					rotate : "0deg"/*, delay: d*/
-				}, 800, "easeOutExpo");
-				$("#"+inspectID[index]).css({ transformOrigin: '0px 0px' }).transition({
-					height : "600px"/*, delay: d*/
-				}, 800);
+				//}, 800, "easeOutExpo");
+
 				if(scroll){
 					console.log("es scrollt")
 					var e = document.getElementById(inspectID[0]);
 
 					posTo = e.offsetTop - (window.innerHeight - 600)/2;
-					setTimeout(function(){
+					//setTimeout(function(){
 						$("body,html").animate({
 							scrollTop : posTo
-						}, 800);
-					}, 800);
+						}, 800, "easeOutExpo");
+				//	}, 10);
 
 				/*}else{
 					$("#"+inspectID[index]).css({ transformOrigin: '0px 0px' }).transition({
@@ -239,7 +295,7 @@ function gototop(){
 
 }
 
-
+/*
 function changeUP(id){
 	var Icon = document.getElementById(id);
 	Icon.style.opacity = 1;
@@ -248,6 +304,8 @@ function changeDOWN(id){
 	var Icon = document.getElementById(id);
 	Icon.style.opacity = 0.5;
 }
+*/
+
 /*
 function getPosition(element) {
 	var xPosition = 0;
