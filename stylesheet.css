@@ -39,7 +39,6 @@ a img
 /* root_site setup*/
 #head_main_container
 	{
-
 		position: relative;
 		z-index: 1000;
 		background: #000000;
@@ -65,8 +64,8 @@ a img
 			width: 200px;
 			height: 200px;
 			position:fixed;
-			top:60%;
-			left:75%;
+			bottom:50px;
+			right:50px;
 			opacity: 0.7;
 		}
 
@@ -90,7 +89,6 @@ a img
 #root_site
 {
 	width: 100%;
-
 	background-color: rgb(100,100,180);
 }
 
@@ -110,16 +108,6 @@ a img
 		color: rgb(10,10,10);
 		position: relative;
 		//font-weight: bold;
-
-	}
-	.ArtikelText
-	{
-		position: absolute;
-		left: 0;
-		top: 0;
-		width:100%;
-		background: rgb(100,100,100);
-		z-index: 0;
 
 	}
 		div.prevImage
